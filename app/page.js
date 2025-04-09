@@ -21,15 +21,15 @@ export default function Home() {
         </div>
         
         <div className="hidden md:flex space-x-10">
-          <a href="#services" className="hover:text-purple-400 transition-colors">What We Offer</a>
-          <a href="#about" className="hover:text-purple-400 transition-colors">Why Black</a>
-          <a href="#about" className="hover:text-purple-400 transition-colors">About Us</a>
-          <a href="#contact" className="hover:text-purple-400 transition-colors">Contact Us</a>
+          <a href="#services" className="hover:text-[#08a045] transition-colors">What We Offer</a>
+          <a href="#about" className="hover:text-[#08a045] transition-colors">Why Black</a>
+          <a href="#about" className="hover:text-[#08a045] transition-colors">About Us</a>
+          <a href="#contact" className="hover:text-[#08a045] transition-colors">Contact Us</a>
         </div>
         
         <div className="flex space-x-4 items-center">
           <a href="/login" className="hover:text-purple-400">Log In</a>
-          <a href="/get-started" className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md transition-colors">
+          <a href="/get-started" className="bg-[#08a045] hover:bg-[#08a008] text-white px-4 py-2 rounded-md transition-colors">
             Get Started
           </a>
         </div>
@@ -39,8 +39,8 @@ export default function Home() {
       <main className="relative">
         {/* Gradient Mesh Background - Similar to Marco's site */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-purple-500 opacity-10 blur-3xl" />
-          <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] rounded-full bg-purple-700 opacity-10 blur-3xl" />
+          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[#08a045] opacity-10 blur-3xl" />
+          <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] rounded-full bg-[#09c856] opacity-10 blur-3xl" />
         </div>
 
         {/* Main Hero Content */}
@@ -48,22 +48,22 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
             When your portfolio
             <br />
-            needs <span className="text-purple-400">growth</span>
+            needs <span className="text-[#08a045]">growth</span>
             <br />
             Think Black.
           </h1>
           
           <div className="flex flex-col md:flex-row justify-center items-center mt-16 space-y-4 md:space-y-0 md:space-x-8">
             <div className="flex items-center space-x-2">
-              <CheckCircle className="text-purple-400" size={20} />
+              <CheckCircle className="text-[#08a045]" size={20} />
               <span>$10M – $50M investments</span>
             </div>
             <div className="flex items-center space-x-2">
-              <CheckCircle className="text-purple-400" size={20} />
+              <CheckCircle className="text-[#08a045]" size={20} />
               <span>Expert evaluation in days</span>
             </div>
             <div className="flex items-center space-x-2">
-              <CheckCircle className="text-purple-400" size={20} />
+              <CheckCircle className="text-[#08a045]" size={20} />
               <span>Capital secured within 30 days</span>
             </div>
           </div>
@@ -73,7 +73,7 @@ export default function Home() {
               <span>Get started</span>
               <ArrowRight size={16} />
             </a>
-            <a href="/learn-more" className="flex items-center justify-center space-x-2 border border-white px-6 py-3 rounded-md hover:bg-white hover:bg-opacity-10 transition-colors">
+            <a href="/learn-more" className="flex items-center justify-center space-x-2 border border-white px-6 py-3 rounded-md hover:text-black hover:bg-white hover:bg-opacity-10 transition-colors">
               <span>Learn More</span>
               <ArrowRight size={16} />
             </a>
@@ -87,15 +87,15 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Strategic Investment Solutions</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-900 p-8 rounded-lg hover:border-purple-500 border border-gray-800 transition-all">
+            <div className="bg-gray-900 p-8 rounded-lg hover:border-[#08a045] border border-gray-800 transition-all">
               <h3 className="text-xl font-bold mb-4">Private Equity</h3>
               <p className="text-gray-400">Exclusive investments in high-potential private companies with clear growth trajectories.</p>
             </div>
-            <div className="bg-gray-900 p-8 rounded-lg hover:border-purple-500 border border-gray-800 transition-all">
+            <div className="bg-gray-900 p-8 rounded-lg hover:border-[#08a045] border border-gray-800 transition-all">
               <h3 className="text-xl font-bold mb-4">Venture Capital</h3>
               <p className="text-gray-400">Early-stage funding for innovative startups that are disrupting traditional markets.</p>
             </div>
-            <div className="bg-gray-900 p-8 rounded-lg hover:border-purple-500 border border-gray-800 transition-all">
+            <div className="bg-gray-900 p-8 rounded-lg hover:border-[#08a045] border border-gray-800 transition-all">
               <h3 className="text-xl font-bold mb-4">Asset Management</h3>
               <p className="text-gray-400">Comprehensive portfolio management with diversified investment strategies.</p>
             </div>
@@ -113,11 +113,11 @@ export default function Home() {
             <input 
               type="email" 
               placeholder="Enter your email" 
-              className="px-4 py-3 w-full md:w-64 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="px-4 py-3 w-full md:w-64 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#08a045]"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <a href="/contact" className="flex items-center justify-center space-x-2 bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition-colors w-full md:w-auto">
+            <a href="/contact" className="flex items-center justify-center space-x-2 bg-[#08a045] text-white px-6 py-3 rounded-md hover:bg-[#08a045] transition-colors w-full md:w-auto">
               <span>Request Consultation</span>
               <ArrowRight size={16} />
             </a>
