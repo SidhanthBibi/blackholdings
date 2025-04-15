@@ -28,7 +28,7 @@ export default function Home() {
         </div>
         
         <div className="flex space-x-4 items-center">
-          <a href="/login" className="hover:text-purple-400">Log In</a>
+          <a href="/login" className="hover:text-[#08a045]">Log In</a>
           <a href="/get-started" className="bg-[#08a045] hover:bg-[#08a008] text-white px-4 py-2 rounded-md transition-colors">
             Get Started
           </a>
@@ -37,10 +37,24 @@ export default function Home() {
 
       {/* Hero Section */}
       <main className="relative">
-        {/* Gradient Mesh Background - Similar to Marco's site */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[#08a045] opacity-10 blur-3xl" />
-          <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] rounded-full bg-[#09c856] opacity-10 blur-3xl" />
+        {/* Wavy Line Background - Replacing Gradient Mesh */}
+        <div className="absolute inset-0 flex items-center justify-center w-full overflow-hidden pointer-events-none">
+          <svg 
+            className="w-full" 
+            height="200" 
+            preserveAspectRatio="none" 
+            viewBox="0 0 1440 200" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path 
+              d="M0 40C240 100 480 160 720 120C960 80 1200 10 1440 40" 
+              stroke="#08a045" 
+              strokeWidth="3" 
+              strokeOpacity="0.5" 
+              fill="none"
+            />
+          </svg>
         </div>
 
         {/* Main Hero Content */}
