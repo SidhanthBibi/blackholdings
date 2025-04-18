@@ -23,7 +23,7 @@ export default function Home() {
         
         <div className="hidden md:flex space-x-10">
           <a href="#services" className="hover:text-[#08a045] transition-colors">What We Offer</a>
-          <a href="#about" className="hover:text-[#08a045] transition-colors">Why Black</a>
+          <a href="#about" className="hover:text-[#08a045] transition-colors">Blog</a>
           <a href="#about" className="hover:text-[#08a045] transition-colors">About Us</a>
           <a href="#contact" className="hover:text-[#08a045] transition-colors">Contact Us</a>
         </div>
@@ -54,7 +54,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-center items-center mt-16 space-y-4 md:space-y-0 md:space-x-8">
             <div className="flex items-center space-x-2">
               <CheckCircle className="text-[#08a045]" size={20} />
-              <span>$10M – $50M investments</span>
+              <span>$10M - $50M investments</span>
             </div>
             <div className="flex items-center space-x-2">
               <CheckCircle className="text-[#08a045]" size={20} />
