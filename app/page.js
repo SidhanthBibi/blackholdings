@@ -2,6 +2,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import ChartBackground from './ChartBackground'
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -37,25 +38,8 @@ export default function Home() {
 
       {/* Hero Section */}
       <main className="relative">
-        {/* Wavy Line Background - Replacing Gradient Mesh */}
-        <div className="absolute inset-0 flex items-center justify-center w-full overflow-hidden pointer-events-none">
-          <svg 
-            className="w-full" 
-            height="200" 
-            preserveAspectRatio="none" 
-            viewBox="0 0 1440 200" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path 
-              d="M0 40C240 100 480 160 720 120C960 80 1200 10 1440 40" 
-              stroke="#08a045" 
-              strokeWidth="3" 
-              strokeOpacity="0.5" 
-              fill="none"
-            />
-          </svg>
-        </div>
+  
+      <ChartBackground />
 
         {/* Main Hero Content */}
         <div className="max-w-6xl mx-auto px-6 py-24 text-center relative z-10">
