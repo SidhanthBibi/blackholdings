@@ -25,12 +25,13 @@ const chartOptions = {
 const chart = LightweightCharts.createChart(container, chartOptions);
 
 const areaSeries = chart.addAreaSeries({
-    topColor: '#08a045',
-    bottomColor: 'rgba(8, 160, 69, 0.13)',
-    lineColor: '#08a045',
+    topColor: '#05613D',                          // 🌱 Darker green at the top
+    bottomColor: 'rgba(5, 97, 61, 0.05)',         // Same green, but very transparent at bottom
+    lineColor: '#03432B',                         // 🟢 Even darker line for contrast
     lineWidth: 2,
-    crossHairMarkerVisible: false,
-});
+  });
+  
+  
 
 const dayData = [
     { time: '2019-05-01', value: 26.02 },
