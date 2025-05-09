@@ -129,14 +129,7 @@ export default function Home() {
                 <li><a href="#" className="hover:text-purple-400">News</a></li>
               </ul>
             </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>New York • London • Singapore</li>
-                <li>info@blackholdings.com</li>
-                <li>+1 (212) 555-0123</li>
-              </ul>
-            </div>
+            
           </div>
           <div className="border-t border-gray-800 mt-10 pt-10 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500">© 2025 Black Holdings. All rights reserved.</p>
