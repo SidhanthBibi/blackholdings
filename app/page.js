@@ -1,11 +1,38 @@
-"use client"
+"use client";
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ArrowRight, CheckCircle } from 'lucide-react';
-import ChartBackground from './ChartBackground'
+import ChartBackground from './ChartBackground';
 
 export default function Home() {
   const [email, setEmail] = useState('');
+  const emailRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && emailRef.current) {
+          emailRef.current.focus();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    const loginForm = document.getElementById("login-form");
+    if (loginForm) observer.observe(loginForm);
+
+    return () => observer.disconnect();
+  }, []);
+
+  function handleLogin(event) {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    // Handle login logic here
+    console.log('Email:', email);
+    console.log('Password:', password);
+  }
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -29,7 +56,7 @@ export default function Home() {
         </div>
         
         <div className="flex space-x-4 items-center">
-          <a href="/login" className="hover:text-[#08a045]">Log In</a>
+          <a href="#login-form" className="hover:text-[#08a045]">Log In</a>
           <a href="/get-started" className="bg-[#08a045] hover:bg-[#08a008] text-white px-4 py-2 rounded-md transition-colors">
             Get Started
           </a>
@@ -38,10 +65,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <main className="relative">
-  
-      <ChartBackground />
-
-        {/* Main Hero Content */}
+        <ChartBackground />
         <div className="max-w-6xl mx-auto px-6 py-24 text-center relative z-10">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
             When your portfolio
@@ -55,12 +79,7 @@ export default function Home() {
               <CheckCircle className="text-[#08a045]" size={20} />
               <span>The Future Is Under Construction. And It’s <span className="text-[#08a045]">Classified.</span></span>
             </div>
-            
           </div>
-          
-          <div className="flex flex-col md:flex-row justify-center items-center mt-16 space-y-4 md:space-y-0 md:space-x-8">
-          </div>
-          
           <div className="mt-12 flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
             <a href="/learn-more" className="flex items-center justify-center space-x-2 border border-white px-6 py-3 rounded-md hover:text-black hover:bg-white hover:bg-opacity-10 transition-colors">
               <span>Learn More</span>
@@ -69,42 +88,42 @@ export default function Home() {
           </div>
         </div>
       </main>
-      
 
-      {/* CTA Section */}
+      {/* CTA / Login Section */}
       <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-  <div className="max-w-4xl mx-auto px-6 text-center">
-    <h2 className="text-3xl md:text-4xl font-bold mb-6">
-      Ready to accelerate your growth?
-    </h2>
-    <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
-      Join the elite portfolio of companies backed by Black Holdings
-    </p>
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to accelerate your growth?
+          </h2>
+          <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
+            Join the elite portfolio of companies backed by Black Holdings
+          </p>
 
-    <form onSubmit={handleLogin} className="flex flex-col items-center space-y-4 w-full">
-      <input
-        id="email"
-        type="email"
-        placeholder="Email"
-        required
-        className="px-4 py-3 w-full md:w-96 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#08a045]"
-      />
-      <input
-        id="password"
-        type="password"
-        placeholder="Password"
-        required
-        className="px-4 py-3 w-full md:w-96 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#08a045]"
-      />
-      <button
-        type="submit"
-        className="px-6 py-3 w-full md:w-96 bg-[#08a045] text-white rounded-md hover:bg-[#08a045] transition-colors"
-      >
-        Login
-      </button>
-    </form>
-  </div>
-  </section>
+          <form id="login-form" onSubmit={handleLogin} className="flex flex-col items-center space-y-4 w-full">
+            <input
+              ref={emailRef}
+              id="email"
+              type="email"
+              placeholder="Email"
+              required
+              className="px-4 py-3 w-full md:w-96 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#08a045]"
+            />
+            <input
+              id="password"
+              type="password"
+              placeholder="Password"
+              required
+              className="px-4 py-3 w-full md:w-96 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#08a045]"
+            />
+            <button
+              type="submit"
+              className="px-6 py-3 w-full md:w-96 bg-[#08a045] text-white rounded-md hover:bg-[#08a008] transition-colors"
+            >
+              Login
+            </button>
+          </form>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="py-12 bg-gray-900 border-t border-gray-800">
@@ -148,13 +167,4 @@ export default function Home() {
       </footer>
     </div>
   );
-}
-function handleLogin(event) {
-  event.preventDefault();
-  const email = event.target.email.value;
-  const password = event.target.password.value;
-
-  // Handle login logic here
-  console.log('Email:', email);
-  console.log('Password:', password);
 }
