@@ -50,27 +50,18 @@ export default function Home() {
             <br />
             Think Black.
           </h1>
-          
           <div className="flex flex-col md:flex-row justify-center items-center mt-16 space-y-4 md:space-y-0 md:space-x-8">
             <div className="flex items-center space-x-2">
               <CheckCircle className="text-[#08a045]" size={20} />
-              <span>$10M - $50M investments</span>
+              <span>The Future Is Under Construction. And It’s <span className="text-[#08a045]">Classified.</span></span>
             </div>
-            <div className="flex items-center space-x-2">
-              <CheckCircle className="text-[#08a045]" size={20} />
-              <span>Expert evaluation in days</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <CheckCircle className="text-[#08a045]" size={20} />
-              <span>Capital secured within 30 days</span>
-            </div>
+            
+          </div>
+          
+          <div className="flex flex-col md:flex-row justify-center items-center mt-16 space-y-4 md:space-y-0 md:space-x-8">
           </div>
           
           <div className="mt-12 flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-            <a href="/get-started" className="flex items-center justify-center space-x-2 bg-white text-black px-6 py-3 rounded-md hover:bg-gray-200 transition-colors">
-              <span>Get started</span>
-              <ArrowRight size={16} />
-            </a>
             <a href="/learn-more" className="flex items-center justify-center space-x-2 border border-white px-6 py-3 rounded-md hover:text-black hover:bg-white hover:bg-opacity-10 transition-colors">
               <span>Learn More</span>
               <ArrowRight size={16} />
@@ -78,50 +69,42 @@ export default function Home() {
           </div>
         </div>
       </main>
-
-      {/* Features Section */}
-      <section id="services" className="py-20 bg-black bg-opacity-80 relative">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Strategic Investment Solutions</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-900 p-8 rounded-lg hover:border-[#08a045] border border-gray-800 transition-all">
-              <h3 className="text-xl font-bold mb-4">Private Equity</h3>
-              <p className="text-gray-400">Exclusive investments in high-potential private companies with clear growth trajectories.</p>
-            </div>
-            <div className="bg-gray-900 p-8 rounded-lg hover:border-[#08a045] border border-gray-800 transition-all">
-              <h3 className="text-xl font-bold mb-4">Venture Capital</h3>
-              <p className="text-gray-400">Early-stage funding for innovative startups that are disrupting traditional markets.</p>
-            </div>
-            <div className="bg-gray-900 p-8 rounded-lg hover:border-[#08a045] border border-gray-800 transition-all">
-              <h3 className="text-xl font-bold mb-4">Asset Management</h3>
-              <p className="text-gray-400">Comprehensive portfolio management with diversified investment strategies.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to accelerate your growth?</h2>
-          <p className="text-gray-400 mb-10 max-w-2xl mx-auto">Join the elite portfolio of companies backed by Black Holdings and transform your business trajectory.</p>
-          
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              className="px-4 py-3 w-full md:w-64 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#08a045]"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <a href="/contact" className="flex items-center justify-center space-x-2 bg-[#08a045] text-white px-6 py-3 rounded-md hover:bg-[#08a045] transition-colors w-full md:w-auto">
-              <span>Request Consultation</span>
-              <ArrowRight size={16} />
-            </a>
-          </div>
-        </div>
-      </section>
+  <div className="max-w-4xl mx-auto px-6 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      Ready to accelerate your growth?
+    </h2>
+    <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
+      Join the elite portfolio of companies backed by Black Holdings
+    </p>
+
+    <form onSubmit={handleLogin} className="flex flex-col items-center space-y-4 w-full">
+      <input
+        id="email"
+        type="email"
+        placeholder="Email"
+        required
+        className="px-4 py-3 w-full md:w-96 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#08a045]"
+      />
+      <input
+        id="password"
+        type="password"
+        placeholder="Password"
+        required
+        className="px-4 py-3 w-full md:w-96 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#08a045]"
+      />
+      <button
+        type="submit"
+        className="px-6 py-3 w-full md:w-96 bg-[#08a045] text-white rounded-md hover:bg-[#08a045] transition-colors"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+  </section>
 
       {/* Footer */}
       <footer className="py-12 bg-gray-900 border-t border-gray-800">
@@ -129,15 +112,12 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             <div>
               <h3 className="text-xl font-bold mb-4">BLACK HOLDINGS</h3>
-              <p className="text-gray-400">Empowering Growth Through Strategic Investments</p>
+              <p className="text-gray-400">The Holdings Company of Innovative Projects</p>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-purple-400">Private Equity</a></li>
-                <li><a href="#" className="hover:text-purple-400">Venture Capital</a></li>
-                <li><a href="#" className="hover:text-purple-400">Asset Management</a></li>
-                <li><a href="#" className="hover:text-purple-400">Strategic Advisory</a></li>
+                <li><a href="#" className="hover:text-purple-400">Classified</a></li>
               </ul>
             </div>
             <div>
@@ -170,4 +150,13 @@ export default function Home() {
       </footer>
     </div>
   );
+}
+function handleLogin(event) {
+  event.preventDefault();
+  const email = event.target.email.value;
+  const password = event.target.password.value;
+
+  // Handle login logic here
+  console.log('Email:', email);
+  console.log('Password:', password);
 }
